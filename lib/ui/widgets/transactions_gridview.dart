@@ -1,5 +1,6 @@
 import 'package:bank_dashboard/constants/widget_constants.dart';
 import 'package:bank_dashboard/ui/shared/edge_insect.dart';
+import 'package:bank_dashboard/ui/widgets/on_hover.dart';
 import 'package:flutter/material.dart';
 
 class TransactionsGridView extends StatelessWidget {
@@ -24,7 +25,9 @@ class TransactionsGridView extends StatelessWidget {
         mainAxisSpacing: defaultPadding,
         childAspectRatio: childAspectRatio,
       ),
-      itemBuilder: (context, index) => demoTransactions[index],
+      itemBuilder: (context, index) {
+        return OnHover(child: demoTransactions[index]);
+      },
     );
   }
 }

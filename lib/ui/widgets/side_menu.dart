@@ -1,5 +1,6 @@
 import 'package:bank_dashboard/ui/shared/colors.dart';
 import 'package:bank_dashboard/ui/shared/text_styles.dart';
+import 'package:bank_dashboard/ui/widgets/on_hover.dart';
 import 'package:flutter/material.dart';
 
 class SideMenu extends StatelessWidget {
@@ -9,6 +10,39 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<DrawerListTile> drawerListTiles = [
+      DrawerListTile(
+        title: "Home",
+        icon: Icons.home,
+        press: () {},
+      ),
+      DrawerListTile(
+        title: "Cards",
+        icon: Icons.card_giftcard,
+        press: () {},
+      ),
+      DrawerListTile(
+        title: "Transaction",
+        icon: Icons.transform,
+        press: () {},
+      ),
+      DrawerListTile(
+        title: "Statistics",
+        icon: Icons.calculate,
+        press: () {},
+      ),
+      DrawerListTile(
+        title: "Settings",
+        icon: Icons.settings,
+        press: () {},
+      ),
+      DrawerListTile(
+        title: "Logout",
+        icon: Icons.logout,
+        press: () {},
+      ),
+    ];
+
     return Drawer(
       backgroundColor: kTertiaryColor5,
       child: ListView(
@@ -25,40 +59,12 @@ class SideMenu extends StatelessWidget {
                     'magicBank',
                     style: kHeading3TextStyle,
                   ),
-                )
+                ),
               ],
             ),
           ),
-          DrawerListTile(
-            title: "Home",
-            icon: Icons.home,
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Cards",
-            icon: Icons.card_giftcard,
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Transaction",
-            icon: Icons.transform,
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Statistics",
-            icon: Icons.calculate,
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Settings",
-            icon: Icons.settings,
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Logout",
-            icon: Icons.logout,
-            press: () {},
-          ),
+          for (final drawerListTile in drawerListTiles)
+            OnHover(child: drawerListTile),
         ],
       ),
     );
